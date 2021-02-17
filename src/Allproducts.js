@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector,useDispatch } from "react-redux";
 import {Link} from 'react-router-dom'
+import Confirm from "./Confirm";
 
 function Allproducts() {
   let items = useSelector((state) => state.ProductReducer.items);
@@ -18,6 +19,8 @@ function Allproducts() {
    return items.map((item, index) => {
         console.log(item)
       return (
+        <>
+        
         <tr key={item.id}>
           <th scope="row">{index}</th>
           <td>{item.name}</td>
@@ -27,6 +30,7 @@ function Allproducts() {
 
           <td> <Link to={`/edit/${item.id}`} >Edit</Link>   </td>
         </tr>
+        </>
       );
     });
   };

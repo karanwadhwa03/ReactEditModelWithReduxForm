@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { Field, reduxForm } from "redux-form";
 
 const renderInput = ({ input, label, type }) => {
+  
   return (
     <Form.Group controlId="formBasicEmail">
       <Form.Label> {label} </Form.Label>
@@ -18,6 +19,7 @@ const renderInput = ({ input, label, type }) => {
 };
 
 function FormComponent(props) {
+  //console.log(props)
   const {handleSubmit} =props
   return (
     <div className="row p-5 justify-content-center">

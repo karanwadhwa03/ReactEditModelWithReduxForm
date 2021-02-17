@@ -1,10 +1,13 @@
 import React from "react";
 import Allproducts from "./Allproducts";
+import Confirm from "./Confirm";
 
 function Products() {
   return (
-    <div className="p-5">
-      <table className="table ">
+
+    <div className="p-5 ">
+      
+      <table className="table fixed ">
         <thead>
           <tr>
             <th scope="col">#</th>

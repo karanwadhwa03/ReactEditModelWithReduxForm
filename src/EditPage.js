@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import EditPageForm from './EditPageForm'
+import FormComponent from './FormComponent'
 
 function EditPage(props) {
     const dispatch=useDispatch()
@@ -24,8 +24,8 @@ function EditPage(props) {
 
     return (
         <div>
-            
-            <EditPageForm  id={id} initialValues={data} onSubmit={submitHandler}></EditPageForm>
+            <FormComponent id={id} initialValues={data} onSubmit={submitHandler}></FormComponent>
+            {/* <EditPageForm  ></EditPageForm> */}
         </div>
     )
 }
