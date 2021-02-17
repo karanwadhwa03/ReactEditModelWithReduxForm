@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 
 
 function Addproduct(props) {
-  const [show, setshow] = useState(false);
+  
 
   console.log(props);
   const Dispatch = useDispatch();
@@ -15,19 +15,16 @@ function Addproduct(props) {
     const payload = { ...values, id: Math.floor(Math.random() * 1000000) };
     console.log(payload);
     Dispatch({ type: "ADD", payload: payload }); // YE SHAYD SYNCHRONUS H
-    setshow(true);
+    
     //KYA YE GALAT H
-    setTimeout(() => {
-      console.log(show);
-      props.history.push('/products');
-    }, 1000)
+    alert("You Submitted Succesfully")
+    props.history.push('/products');
+    
 
   };
 
   return (
     <div>
-       
-      {show && <h1>SUCCESS</h1>}
       <FormComponent onSubmit={submitHandler}></FormComponent>
     </div>
   );

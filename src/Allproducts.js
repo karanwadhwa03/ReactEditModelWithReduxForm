@@ -1,9 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Confirm from "./Confirm";
+import ModalComponent from './ModalComponent'
+
 
 function Allproducts() {
+ 
   let items = useSelector((state) => state.ProductReducer.items);
   console.log(items);
 
@@ -17,11 +19,20 @@ function Allproducts() {
     }
   };
 
+  const EditModal=(id)=>{
+    return Dispatch({type:"OPEN",payload:{id:id,items:items}})
+    
+  }
+
+
+
   const All = () => {
     return items.map((item, index) => {
       console.log(item);
       return (
         <>
+        
+        <tbody>
           <tr key={item.id}>
             <th scope="row">{index}</th>
             <td>{item.name}</td>
@@ -39,7 +50,10 @@ function Allproducts() {
               {" "}
               <Link to={`/edit/${item.id}`}>Edit</Link>{" "}
             </td>
+
+            <td onClick={()=>EditModal(item.id)}>EDIT MODAL</td>
           </tr>
+          </tbody>
         </>
       );
     });

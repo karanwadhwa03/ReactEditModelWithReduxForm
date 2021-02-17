@@ -4,6 +4,7 @@ import {BrowserRouter as Router ,Route ,Switch} from 'react-router-dom'
 import Addproduct from './Addproduct'
 import Products from './Products'
 import EditPage from './EditPage'
+import ModalComponent from './ModalComponent'
 
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
     <div>
       <Router>
       <Header></Header>
+      
       <Route path="/addproduct" component={Addproduct}></Route>
       <Route path="/products" component={Products}></Route>
       <Route path="/edit/:id" component={EditPage}></Route>

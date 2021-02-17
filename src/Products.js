@@ -1,10 +1,17 @@
 import React from "react";
 import Allproducts from "./Allproducts";
 import Confirm from "./Confirm";
+import {useSelector } from 'react-redux'
+import ModalComponent from './ModalComponent'
 
 function Products() {
-  return (
+  const show=useSelector(state=>state.ModalReducer.show);
+  console.log(show)
 
+  return (
+    <div>
+
+    {show && <ModalComponent ></ModalComponent> }
     <div className="p-5 ">
       
       <table className="table fixed ">
@@ -16,12 +23,14 @@ function Products() {
             <th scope="col">Roll No.</th>
             <th scope="col"> Edit</th>
             <th scope="col"> Delete</th>
+            <th scope="col"> EDITMODAL</th>
           </tr>
         </thead>
-        <tbody>
+        
             <Allproducts></Allproducts>
-        </tbody>
+        
       </table>
+    </div>
     </div>
   );
 }

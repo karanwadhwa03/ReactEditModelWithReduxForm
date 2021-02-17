@@ -1,7 +1,6 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { Field, reduxForm } from "redux-form";
-import {useDispatch} from 'react-redux'
 
 const renderInput = ({ input, label, type }) => {
   
@@ -19,14 +18,11 @@ const renderInput = ({ input, label, type }) => {
   );
 };
 
-function FormComponent(props) {
+function ModalFormComponent(props) {
   //console.log(props)
   const {handleSubmit} =props
-  const Dispatch =useDispatch();
- 
   return (
-    <div className="row p-5 justify-content-center">
-      <div className="col-md-6">
+  
         <Form onSubmit={handleSubmit} >
           <Field
             name="name"
@@ -49,18 +45,17 @@ function FormComponent(props) {
             label="Enter Your Roll No."
           ></Field>
 
-          <Button variant="primary" type="submit" >
+          <Button variant="primary" type="submit">
             Submit
           </Button>
         </Form>
-      </div>
-    </div>
+     
   );
 }
 
 
-FormComponent = reduxForm({
+ModalFormComponent = reduxForm({
   form: "item",
-})(FormComponent);
+})(ModalFormComponent);
 
-export default FormComponent;
+export default ModalFormComponent;
