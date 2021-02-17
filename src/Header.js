@@ -12,8 +12,8 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="ml-auto">
-          <Link to="/addproduct">ADD PRODUCT</Link>
-          <Link to="/products">PRODUCTS</Link>
+          <Link to="/addproduct" className="btn text-white">ADD PRODUCT</Link>
+          <Link to="/products" className="btn text-white">PRODUCTS</Link>
           </Nav>
           
         </Navbar.Collapse>

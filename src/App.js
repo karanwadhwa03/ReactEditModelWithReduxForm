@@ -11,7 +11,6 @@ export default function App() {
     <div>
       <Router>
       <Header></Header>
-      
       <Route path="/addproduct" component={Addproduct}></Route>
       <Route path="/products" component={Products}></Route>
       <Route path="/edit/:id" component={EditPage}></Route>
