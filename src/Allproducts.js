@@ -1,11 +1,10 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import ModalComponent from './ModalComponent'
+import InlineEditForm from "./InlineEditForm";
+import ModalComponent from "./ModalComponent";
 
-
-function Allproducts() {
- 
+function Allproducts(props) {
   let items = useSelector((state) => state.ProductReducer.items);
   console.log(items);
 
@@ -19,20 +18,24 @@ function Allproducts() {
     }
   };
 
-  const EditModal=(id)=>{
-    return Dispatch({type:"OPEN",payload:{id:id,items:items}})
-    
-  }
-
-
+  const EditModal = (id) => {
+    return Dispatch({ type: "OPEN", payload: { id: id, items: items } });
+  };
 
   const All = () => {
     return items.map((item, index) => {
       console.log(item);
       return (
-        <>
-        
-        <tbody>
+        <React.Fragment key={item.id}>
+          <InlineEditForm
+            index={index}
+            initialValues={item}
+            form={`INLINE_EDIT${item.id}`}
+            EditModal={EditModal}
+            deleteHandler={deleteHandler}
+            item={item}
+          ></InlineEditForm>
+          {/* <tbody>
           <tr key={item.id}>
             <th scope="row">{index}</th>
             <td>{item.name}</td>
@@ -53,8 +56,8 @@ function Allproducts() {
 
             <td onClick={()=>EditModal(item.id)}>EDIT MODAL</td>
           </tr>
-          </tbody>
-        </>
+          </tbody> */}
+        </React.Fragment>
       );
     });
   };

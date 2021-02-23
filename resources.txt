@@ -3,3 +3,5 @@ https://1sherlynn.medium.com/react-redux-form-two-ways-to-add-initial-values-ab4
 https://sweetalert2.github.io/#download
 
 https://medium.com/javascript-in-plain-english/creating-a-confirm-dialog-in-react-and-material-ui-3d7aaea1d799
+
+https://css-tricks.com/complete-guide-table-element/

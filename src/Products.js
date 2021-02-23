@@ -27,9 +27,10 @@ function Products() {
           </tr>
         </thead>
         
-            <Allproducts></Allproducts>
+            
         
       </table>
+      <Allproducts></Allproducts>
     </div>
     </div>
   );
